@@ -1,0 +1,10 @@
+img{
+    max-height: 50px;
+vertical-align: middle;
+transition: .3s;
+
+}
+
+img:hover{
+    transform: scale(2)
+}
