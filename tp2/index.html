@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>TP2</title>
+        <link type="text/css" rel="stylesheet" href="formulaire.css">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,6 +20,7 @@
               max-width: 800px;              
           }
         </style>
+        <script type="text/javascript" src="formulaire.js"></script>
         
         <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
         <!--<link rel="stylesheet" href="style.css">-->
@@ -27,24 +29,23 @@
     <body>        
         <h1>Saisie d'une fiche persone</h1>
         <table style = "width:100%" border="2" bgcolor="FFFFFF">
-        <form action="/action_page.php">
-          <strong>nom:</strong><br>
-          <input type="text" name="nom"><br>
-          <Strong>Prenom:</Strong><br>
-          <input type="text" name="Prenom"><br>
-          <label for="birthday"><Strong> Date  de naissance:</Strong><br></label>
+        <form  id="formulaire" onsubmit="return valiadtion()" method="POST">
+          <strong>nom:</strong>
+          <input type="text" name="nom" id="nom"><br>
+          <Strong>Prenom:</Strong>
+          <input type="text" name="Prenom"id="Prenom"><br>
+          <label for="birthday"><Strong> Date  de naissance:</Strong></label>
           <input type="date" name="birthday"id="birthday" required/><br>
-         <Strong>Addresse:</Strong> <br>
-          <input type="text" name="Addresse"><br>
-          <label for="mail"> <Strong>Mail:</Strong><br></label>
+         <Strong>Addresse:</Strong> 
+          <input type="text" name="Addresse" id="addresse"><br>
+          <label for="mail"> <Strong>Mail:</Strong></label>
           <input type="email" id="Mail" required/><br>
-          <input type="submit"   value="Valider">
-
-
-
+          <input type="submit"   value="Valider" onclick="validation()">
         </form>
+        <div id="error" method="getElementById"> </div> 
 
         <!-- Add your site or application content here -->
+        <br>
         <p>Hello world! This is HTML5 Boilerplate.</p>
         <img src="../galilee.png" alt="Logo Galilee"/>
     </body>
