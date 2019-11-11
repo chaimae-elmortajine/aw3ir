@@ -1,10 +1,9 @@
 input[type=text],input[type=date],input[type=email] ,select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-    font-size: 16px;
+  padding:3px;
+  border:1px solid #F5C5C5;
+  border-radius:5px;
+  width:200px;
+  box-shadow:1px 1px 2px #C0C0C0 inset;
   }
   input[type=submit] {
     background-color: brown;
@@ -23,4 +22,27 @@ input[type=text],input[type=date],input[type=email] ,select, textarea {
   div{
     background-color: brown;
     color: #000;
+
   }
+  form {
+    background-color:#FAFAFA;
+    padding:10px;
+    width:280px;
+    }
+    fieldset {
+      padding:0 20px 20px 20px;
+      margin-bottom:10px;
+      border:1px solid #DF3F3F;
+      }
+     legend {
+      color:#DF3F3F;
+      font-weight:bold
+      }
+      label {
+        margin-top:10px;
+        display:block;
+        }
+       label.inline {
+        display:inline;
+        margin-right:50px;
+        }
