@@ -3,15 +3,15 @@ function validation()
 var y=document.getElementById("nom").value;
     if(x >= 5){
         
-        document.getElementById("nom").style.display ="le champs doit contenir au moins 5 caractéres";
+        text ="le champs doit contenir au moins 5 caractéres";
     }
     if(y="")
     {
-        document.getElementById("nom").style.display="la saisie du mot est obligatoire";
+       text="la saisie du mot est obligatoire";
 
     }
     else{
-        document.getElementById("nom").style.display="bienvenue "+ y;
+        text="bienvenue "+ y;
     }
     document.getElementById("error").innerHTML = text;
 }
