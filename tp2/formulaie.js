@@ -1,6 +1,6 @@
 function validation()
-{var x =document.getElementById("nom").value.length;
-var y=document.getElementById("nom").value;
+{var x =document.getElementById().value.length;
+var y=document.getElementById().value;
     if(x >= 5){
         
         text="le champs doit contenir au moins 5 caractéres";

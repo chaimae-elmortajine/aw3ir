@@ -4,6 +4,7 @@ input[type=text],input[type=date],input[type=email] ,select, textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
+    font-size: 16px;
   }
   input[type=submit] {
     background-color: brown;
@@ -18,4 +19,8 @@ input[type=text],input[type=date],input[type=email] ,select, textarea {
   label {
     padding: 12px 12px 12px 0;
     display: inline-block;
+  }
+  div{
+    background-color: brown;
+    color: #000;
   }
