@@ -46,3 +46,24 @@ input[type=text],input[type=date],input[type=email] ,select, textarea {
         display:inline;
         margin-right:50px;
         }
+        #error{
+
+          background-color: pink; 
+          padding: 5px; 
+          border-width: 1px; 
+          border-style: solid; 
+          border-color: black;
+      
+        }
+      
+      
+        #resultat{
+      
+          background-color: green; 
+          color: white; 
+          padding: 5px; 
+          border-width: 1px; 
+          border-style: solid;
+      
+      
+        }
