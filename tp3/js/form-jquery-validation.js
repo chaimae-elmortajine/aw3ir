@@ -31,7 +31,7 @@ $(document).ready(function () {
 
         } 
     else {
-        $(".modal-body").html(text + 'Veuillez remplir tous les champs');
+        $(".modal-body").html( 'Veuillez remplir tous les champs');
     }
     $('#myModal').modal("show");
 
