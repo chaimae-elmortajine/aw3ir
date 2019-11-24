@@ -2,87 +2,99 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>TP3</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>TP3</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
 
-    <style>
-        body {
-            background-color: #e9ebee;
-            font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-            font-size: 16px;
-            margin: 0 auto;
-            max-width: 800px;
-        }
-    </style>
+  <style>
+    body {
+      background-color: #e9ebee;
+      font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+      font-size: 16px;
+      margin: 0 auto;
+      max-width: 800px;
+    }
+  </style>
 
-    <!-- jquery pour pouvoir utiliser les composants JS de boostap (modal, tooltip...) -->
-    <script src="js/jquery-3.2.1.slim.min.js"></script>
+  <!-- jquery pour pouvoir utiliser les composants JS de boostap (modal, tooltip...) -->
+  <script src="js/jquery-3.2.1.slim.min.js"></script>
 
-    <!-- CSS boostrap -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- CSS boostrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 
-    <script src="js/popper.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script>
+    $(function () {
+      $("#DateNaissance").datepicker();
+    });
+    //altFormat: "dd-mm-yy";
+    //maxDate: new Date();
+  </script>
 
-    <!-- composants JS de boostrap (modal http://getbootstrap.com/docs/4.0/components/modal/ , collapse...) -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/form-jquery-validation.js"></script>
+  <!-- composants JS de boostrap (modal http://getbootstrap.com/docs/4.0/components/modal/ , collapse...) -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/form-jquery-validation.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <!-- Content here -->
-        <h1>Formulaire</h1>
-        <form>
-            <div class="form-group">
-                <label for="NOM"><strong>NOM</strong></label>
-                <input type="text" class="form-control" id="NOM" placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="Prenom"><strong>Prenom</strong></label>
-                <input type="text" class="form-control" id="Prenom" placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="Date de naissance"><strong>Date de naissance</strong> </label>
-                <input type="date" class="form-control" id="Datenaissance" placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="Addresse"><strong>Addresse</strong></label>
-                <input type="text" class="form-control" id="Addresse" placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="Email"><strong>Email</strong></label>
-                <input type="email" class="form-control" id="Email" placeholder="">
-            </div>
-            <input class="btn btn-primary" type="submit" value="Valider">
-        </form>
+  <div class="container">
+    <!-- Content here -->
+    <h1>Formulaire</h1>
+    <form>
+      <div class="form-group">
+        <label for="NOM"><strong>NOM</strong></label>
+        <input type="text" class="form-control" id="NOM" placeholder="NOM">
+      </div>
+      <div class="form-group">
+        <label for="Prenom"><strong>Prenom</strong></label>
+        <input type="text" class="form-control" id="Prenom" placeholder="Prenom">
+      </div>
+      <div class="form-group">
+        <label for="Date de naissance"><strong>Date de naissance</strong> </label>
+        <input type="date" class="form-control" id="Datenaissance" placeholder="date">
+      </div>
+      <div class="form-group">
+        <label for="Addresse"><strong>Addresse</strong></label>
+        <input type="text" class="form-control" id="Addresse" placeholder="Addresse">
+      </div>
+      <div class="form-group">
+        <label for="Email"><strong>Email</strong></label>
+        <input type="email" class="form-control" id="Email" placeholder="email">
+      </div>
+      <button type="button" class="btn btn-primary" id="valider" data-toggle="modal" data-target="#myModal">Valider
+      </button>
 
-    </div>
+    </form>
 
-    <div class="modal" tabindex="-1" role="dialog" id="myModal">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>Corps de la modal à modifier après validation du formulaire</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Save changes</button>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-          </div>
+  </div>
+
+  <div class="modal" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+
+          
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Enregistrer</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
         </div>
       </div>
+    </div>
+  </div>
 </body>
 
 </html>

@@ -1,39 +1,36 @@
 $(document).ready(function () {
 
-    console.log("DOM ready!");
 
-    $("form").on("submit", function (event) {
-        event.preventDefault();
-        var test = true;
-        var text = "";
-        
-        if (document.getElementById("NOM").value.length < 5 || document.getElementById("NOM").value == "" )
+  console.log("DOM ready!");
 
-         text = "Nom";
+  var NOM = $("#NOM"); var Prenom = $("#Prenom"); var Datenaissance = $("#Datenaissance"); var Addresse = $("#Addresse"); var Email = $("#Email");
 
+  $("#valider").on("click", (event) => {
 
-        if (document.getElementById("Prenom").value.length < 5 || document.getElementById("Prenom").value == "")
+    var test = (verifyInput(NOM.val(), Prenom.val(), Datenaissance.val(), Addresse.val(), Email.val())) ? false : true;
 
-          text = text + ", Prénom";
+    console.log(test);
 
+    if (test) {
 
-        if (document.getElementById("Addresse").value.length < 5 || document.getElementById("Addresse").value == "")
+      $(".modal-title").html("Bienvenue " + Prenom.val());
 
-          text = text + ", Adresse";
+      $(".modal-body").html(" Vous êtes  nés le " + Datenaissance.val()
+        + " et vous habitez : " + ''
+        + '<a href="http://maps.google.com/maps?q=' + Addresse.val()
+        + '"> <img src="https://maps.googleapis.com/maps/api/staticmap?markers=' + Addresse.val()
+        + '&zoom=14&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg" alt="carte" style="width:100%">' + Addresse.val());
 
+    } else {
 
-        if (document.getElementById("Email").value.length < 5 || document.getElementById("Email").value == "")
-
-          text = text + ", Email";
-
-        if (text == "") {
-         $(".modal-body").html('ok');
-
-        } 
-    else {
-        $(".modal-body").html( 'Veuillez remplir tous les champs');
+      $(".modal-title").html("Erreur !"); $(".modal-body").html("Veuillez remplir tous les champs obligatoires..");
     }
-    $('#myModal').modal("show");
 
-});
+    $("#myModal").modal("show");
+  });
+
+  verifyInput = (NOM, Prenom, Datenaissance, Addresse, Email) => {
+    return NOM == "" | Prenom == "" | Datenaissance == "" | Addresse == "" | Email == "";
+  }
+
 });
